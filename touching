@@ -1,0 +1,40 @@
+
+ var fixed, moving;
+var rect1, rect2, rect3, rect4;
+function setup() {
+  createCanvas(800,800);
+ fixed=createSprite(200,200,50,80);
+ fixed.shapeColor="green";
+ 
+ moving=createSprite(200,800,100,70);
+ moving.shapeColor="green";
+
+ rect1=createSprite(100,500,100,70);
+ rect2=createSprite(300,500,100,70);
+ rect3=createSprite(500,500,100,70);
+ rect4=createSprite(700,500,100,70);
+
+ rect1.shapeColor="yellow";
+ rect2.shapeColor="yellow";
+ rect3.shapeColor="yellow";
+ rect4.shapeColor="yellow";
+}
+
+function draw() {
+  background(0);  
+moving.x=mouseX;
+moving.y=mouseY;
+
+  
+if(isTouching(rect4,moving)){
+ moving.shapeColor="blue";
+ rect4.shapeColor="blue";
+}
+else{
+  rect4.shapeColor="yellow";
+  moving.shapeColor="green";
+}
+
+  drawSprites();
+}
+
